@@ -48,7 +48,7 @@
     <ul id="todolist"></ul>
   </div>
 
-  <script>
+   <script>
     function neueAufgabeHinzufuegen() {
       var aufgabenText = document.getElementById('neueAufgabe').value;
       var aufgabenListe = document.getElementById('todolist');
@@ -58,6 +58,10 @@
         neueAufgabe.textContent = aufgabenText;
         aufgabenListe.appendChild(neueAufgabe);
         document.getElementById('neueAufgabe').value = '';
+
+        neueAufgabe.addEventListener('click', function() {
+          aufgabenListe.removeChild(neueAufgabe);
+        });
       }
     }
   </script>
